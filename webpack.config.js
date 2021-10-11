@@ -8,14 +8,17 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
   },
+  resolve: {
+    extensions: [".js", ".jsx"],
+  },
+  devServer: {
+    static: path.resolve(__dirname, "public"),
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "public", "index.html"),
     }),
   ],
-  resolve: {
-    extensions: [".js", ".jsx"],
-  },
   module: {
     rules: [
       {
